@@ -5,6 +5,7 @@ yarn.lock
 
 # docs
 docs
+public
 typedoc.json
 
 # testing

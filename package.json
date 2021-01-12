@@ -11,7 +11,7 @@
   "module:prod": "dist/index.esm.min.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "doc": "typedoc src/index.ts",
+    "doc": "typedoc --plugin typedoc-plugin-extras --favicon public/favicon.png src/index.ts",
     "build": "rollup -c",
     "lint": "eslint \"src/**/*.ts\"",
     "lint:fix": "eslint \"src/**/*.ts\" --fix",
@@ -50,6 +50,7 @@
     "rollup-plugin-typescript2": "^0.29.0",
     "ts-jest": "^26.4.4",
     "typedoc": "^0.20.14",
+    "typedoc-plugin-extras": "^1.1.7",
     "typescript": "^4.1.3"
   },
   "dependencies": {}

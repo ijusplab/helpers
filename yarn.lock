@@ -4254,6 +4254,11 @@ typedoc-default-themes@0.12.1:
   resolved "https://registry.yarnpkg.com/typedoc-default-themes/-/typedoc-default-themes-0.12.1.tgz#6c4a759f9dc365b4021579587b3773deb6fb6eeb"
   integrity sha512-6PEvV+/kWAJeUwEtrKgIsZQSbybW5DGCr6s2mMjHsDplpgN8iBHI52UbA+2C+c2TMCxBNMK9TMS6pdeIdwsLSw==
 
+typedoc-plugin-extras@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/typedoc-plugin-extras/-/typedoc-plugin-extras-1.1.7.tgz#76c4f2b5f1f003581b7542e82d38a0526acb5631"
+  integrity sha512-Rdpiiy4caE3mnLJAwqJhhI9vC7O+k0cSDgGXeVfI5Zl11HVqQ/mGhYqFZ8PgaqXjRhn63aiAdvnKzFt5dygKAg==
+
 typedoc@^0.20.14:
   version "0.20.14"
   resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.20.14.tgz#894ff71841a4abbe8f46cf52f3cc96c9d68328dc"
