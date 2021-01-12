@@ -39,11 +39,11 @@ As a global object:
   console.log(new Helpers.CDate().toString());
 </script>
 ```
-As an ES2016 module:
+As a ES2016 module:
 ```html
 <!-- Instalando como um módulo: -->
 <script type="module">
-  import { CDate } from 'https://unpkg.com/@ijusplab/helpers/dist/index.ems.min.js';
+  import { CDate } from 'https://unpkg.com/@ijusplab/helpers/dist/index.esm.min.js';
 
   console.log(new CDate().toString());
 </script>
@@ -53,7 +53,7 @@ As an ES2016 module:
 
 ### Code
 
-All software files are distributed under the [MIT license](LICENSE.md). Copyright held by iJuspLab.
+All software files are distributed under the [MIT license](LICENSE). Copyright held by iJuspLab.
 
 ### Assets
 
