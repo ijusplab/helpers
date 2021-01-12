@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+
+    // Project options
+    "outDir": "./dist/",
+    "target": "ES2020",
+    "module": "ESNEXT", // forced by roolup typescript plugin
+    "importHelpers": true, // forced by roolup typescript plugin
+    "noEmit": false, // forced by roolup typescript plugin
+
+    // Module resolution
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node", // forced by roolup typescript plugin
+
+    // Type checking
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+
+
+    // Code quality
+    "strict": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "importsNotUsedAsValues": "error",
+    
+    // Watch options
+    "noEmitHelpers": false, // forced by roolup typescript plugin
+    "noResolve": false // forced by roolup typescript plugin    
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"]
+}

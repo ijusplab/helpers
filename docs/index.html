@@ -1,0 +1,315 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@ijusplab/helpers</title>
+	<meta name="description" content="Documentation for @ijusplab/helpers">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@ijusplab/helpers</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>Project @ijusplab/helpers</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#helpers" id="helpers" style="color: inherit; text-decoration: none;">
+					<h1>Helpers</h1>
+				</a>
+				<p>General-purpose Javascript functions used by the Innovation Lab of the Federal Justice of São Paulo (iJuspLab).</p>
+				<p>The library was developed in Typescript and can be used both in Node and in the browser. Distribution files are located inside the folder <code>./dist</code> and type declaration files inside the folder <code>./types</code>.</p>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation:</h2>
+				</a>
+				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">install</span><span style="color: #000000"> @</span><span style="color: #001080">ijuplab</span><span style="color: #000000">/</span><span style="color: #001080">helpers</span>
+</code></pre>
+				<p>or</p>
+				<pre><code><span style="color: #001080">yarn</span><span style="color: #000000"> </span><span style="color: #001080">add</span><span style="color: #000000"> @</span><span style="color: #001080">ijuplab</span><span style="color: #000000">/</span><span style="color: #001080">helpers</span>
+</code></pre>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage:</h2>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">CDate</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;@ijusplab/helpers&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">CDate</span><span style="color: #000000">().</span><span style="color: #795E26">toString</span><span style="color: #000000">());</span>
+</code></pre>
+				<p>or </p>
+				<pre><code class="language-javascript"><span style="color: #001080">ìmport</span><span style="color: #000000"> { </span><span style="color: #001080">CDate</span><span style="color: #000000"> } </span><span style="color: #001080">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@ijusplab/helpers&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">CDate</span><span style="color: #000000">().</span><span style="color: #795E26">toString</span><span style="color: #000000">());</span>
+</code></pre>
+				<a href="#usage-in-the-browser-through-a-cdn" id="usage-in-the-browser-through-a-cdn" style="color: inherit; text-decoration: none;">
+					<h2>Usage in the browser through a CDN:</h2>
+				</a>
+				<p>As a global object:</p>
+				<pre><code class="language-html"><span style="color: #008000">&lt;!-- Instalando no escopo global: --&gt;</span>
+<span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/@ijusplab/helpers/dist/index.umd.min.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+
+<span style="color: #800000">&lt;script&gt;</span>
+<span style="color: #000000FF">  </span><span style="color: #008000">// Os métodos da biblioteca estarão disponíveis por meio do objeto global Helpers.</span>
+<span style="color: #000000FF">  </span><span style="color: #001080">console</span><span style="color: #000000FF">.</span><span style="color: #795E26">log</span><span style="color: #000000FF">(</span><span style="color: #001080">Helpers</span><span style="color: #000000FF">);</span>
+<span style="color: #000000FF">  </span><span style="color: #001080">console</span><span style="color: #000000FF">.</span><span style="color: #795E26">log</span><span style="color: #000000FF">(</span><span style="color: #0000FF">new</span><span style="color: #000000FF"> </span><span style="color: #267F99">Helpers</span><span style="color: #000000FF">.</span><span style="color: #267F99">CDate</span><span style="color: #000000FF">().</span><span style="color: #795E26">toString</span><span style="color: #000000FF">());</span>
+<span style="color: #800000">&lt;/script&gt;</span>
+</code></pre>
+				<p>As an ES2016 module:</p>
+				<pre><code class="language-html"><span style="color: #008000">&lt;!-- Instalando como um módulo: --&gt;</span>
+<span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">type</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;module&quot;</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000FF">  </span><span style="color: #AF00DB">import</span><span style="color: #000000FF"> { </span><span style="color: #001080">CDate</span><span style="color: #000000FF"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000FF"> </span><span style="color: #A31515">&#039;https://unpkg.com/@ijusplab/helpers/dist/index.ems.min.js&#039;</span><span style="color: #000000FF">;</span>
+
+<span style="color: #000000FF">  </span><span style="color: #001080">console</span><span style="color: #000000FF">.</span><span style="color: #795E26">log</span><span style="color: #000000FF">(</span><span style="color: #0000FF">new</span><span style="color: #000000FF"> </span><span style="color: #267F99">CDate</span><span style="color: #000000FF">().</span><span style="color: #795E26">toString</span><span style="color: #000000FF">());</span>
+<span style="color: #800000">&lt;/script&gt;</span>
+</code></pre>
+				<a href="#licensing" id="licensing" style="color: inherit; text-decoration: none;">
+					<h2>Licensing</h2>
+				</a>
+				<a href="#code" id="code" style="color: inherit; text-decoration: none;">
+					<h3>Code</h3>
+				</a>
+				<p>All software files are distributed under the <a href="LICENSE.md">MIT license</a>. Copyright held by iJuspLab.</p>
+				<a href="#assets" id="assets" style="color: inherit; text-decoration: none;">
+					<h3>Assets</h3>
+				</a>
+				<p>Any institutional symbols, such as coats of arms, emblems, badges, logos etc. belonging to or representing the Federal Justice of São Paulo (Justiça Federal de São Paulo - JFSP), iJuspLab, Equipe de Gestão de Dados - EGD, Incubadora de Soluções Tecnológicas, Núcleo de Inovação Tecnológica - NUIT or any of their agencies, departments, sectors, branches, affiliates, partners or controlling organizations, either stored in this repository, or referenced herein by means of hyperlinks, are not licensed and may not be used without the prior written consent of the legal representatives of the Federal Justice of São Paulo.</p>
+				<div style="display: flex; align-items: center; justify-content: space-around;">
+					<img src="https://unpkg.com/@ijusplab/static-assets@latest/assets/ijusplab.png" height="80" />
+					<img src="https://unpkg.com/@ijusplab/static-assets@latest/assets/incubadora.png" height="50" />
+				</div>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/currency_codes.html" class="tsd-kind-icon">CURRENCY_<wbr>CODES</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/date_input_formats.html" class="tsd-kind-icon">DATE_<wbr>INPUT_<wbr>FORMATS</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/date_output_formats.html" class="tsd-kind-icon">DATE_<wbr>OUTPUT_<wbr>FORMATS</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/days360_methods.html" class="tsd-kind-icon">DAYS360_<wbr>METHODS</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/duration_types.html" class="tsd-kind-icon">DURATION_<wbr>TYPES</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/cdate.html" class="tsd-kind-icon">CDate</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#clonedeep" class="tsd-kind-icon">clone<wbr>Deep</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#competencerange" class="tsd-kind-icon">competence<wbr>Range</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#concatunique" class="tsd-kind-icon">concat<wbr>Unique</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#cropclone" class="tsd-kind-icon">crop<wbr>Clone</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#datediff" class="tsd-kind-icon">date<wbr>Diff</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#datetostring" class="tsd-kind-icon">date<wbr>ToString</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#days360" class="tsd-kind-icon">days360</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#debounce" class="tsd-kind-icon">debounce</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#durationfromnow" class="tsd-kind-icon">duration<wbr>From<wbr>Now</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#equals" class="tsd-kind-icon">equals</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#filterasstring" class="tsd-kind-icon">filter<wbr>AsString</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#filterunique" class="tsd-kind-icon">filter<wbr>Unique</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#firstdayofmonth" class="tsd-kind-icon">first<wbr>Day<wbr>OfMonth</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#getuserlocale" class="tsd-kind-icon">get<wbr>User<wbr>Locale</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#getusertimezone" class="tsd-kind-icon">get<wbr>User<wbr>Time<wbr>Zone</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#getvaluefrompath" class="tsd-kind-icon">get<wbr>Value<wbr>From<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#isafter" class="tsd-kind-icon">is<wbr>After</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#isbefore" class="tsd-kind-icon">is<wbr>Before</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#isbetween" class="tsd-kind-icon">is<wbr>Between</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#isemptyarray" class="tsd-kind-icon">is<wbr>Empty<wbr>Array</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#isemptyobject" class="tsd-kind-icon">is<wbr>Empty<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#isfalsy" class="tsd-kind-icon">is<wbr>Falsy</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#islastoffebruary" class="tsd-kind-icon">is<wbr>Last<wbr>OfFebruary</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#isleapyear" class="tsd-kind-icon">is<wbr>Leap<wbr>Year</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#isnonemptystring" class="tsd-kind-icon">is<wbr>Non<wbr>Empty<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#isnumeric" class="tsd-kind-icon">is<wbr>Numeric</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#issamedate" class="tsd-kind-icon">is<wbr>Same<wbr>Date</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#istableofdates" class="tsd-kind-icon">is<wbr>Table<wbr>OfDates</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#istruthy" class="tsd-kind-icon">is<wbr>Truthy</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#isvaliddate" class="tsd-kind-icon">is<wbr>Valid<wbr>Date</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#lastdayofmonth" class="tsd-kind-icon">last<wbr>Day<wbr>OfMonth</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#lastoffebruary" class="tsd-kind-icon">last<wbr>OfFebruary</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#overlappingdays" class="tsd-kind-icon">overlapping<wbr>Days</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#parsefloatlocale" class="tsd-kind-icon">parse<wbr>Float<wbr>Locale</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#positionincompetencetable" class="tsd-kind-icon">position<wbr>InCompetence<wbr>Table</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#range" class="tsd-kind-icon">range</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#setvaluefrompath" class="tsd-kind-icon">set<wbr>Value<wbr>From<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#stringtodate" class="tsd-kind-icon">string<wbr>ToDate</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#tocurrency" class="tsd-kind-icon">to<wbr>Currency</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#tolocalenumberformat" class="tsd-kind-icon">to<wbr>Locale<wbr>Number<wbr>Format</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#tolocalepercentformat" class="tsd-kind-icon">to<wbr>Locale<wbr>Percent<wbr>Format</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#validdateparameters" class="tsd-kind-icon">valid<wbr>Date<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#validtimeparameters" class="tsd-kind-icon">valid<wbr>Time<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#validatecnpj" class="tsd-kind-icon">validate<wbr>Cnpj</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#validatecpf" class="tsd-kind-icon">validate<wbr>Cpf</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

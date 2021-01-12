@@ -1,0 +1,884 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CDate | @ijusplab/helpers</title>
+	<meta name="description" content="Documentation for @ijusplab/helpers">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">@ijusplab/helpers</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">@ijusplab/helpers</a>
+				</li>
+				<li>
+					<a href="cdate.html">CDate</a>
+				</li>
+			</ul>
+			<h1>Class CDate</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Convenience wrapper for the native Date object.</p>
+					</div>
+					<p>Example:</p>
+					<pre><code><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">CDate</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;2020-01-01&#039;</span><span style="color: #000000">).</span><span style="color: #795E26">setLocale</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;pt-BR&#039;</span><span style="color: #000000">).</span><span style="color: #795E26">humanized</span><span style="color: #000000">());</span>
+<span style="color: #008000">// Output: 1 de janeiro de 2020</span>
+</code></pre>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">CDate</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="cdate.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="cdate.html#date" class="tsd-kind-icon">date</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="cdate.html#locale" class="tsd-kind-icon">locale</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="cdate.html#timezone" class="tsd-kind-icon">timezone</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="cdate.html#valid" class="tsd-kind-icon">valid</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdate.html#fromnow" class="tsd-kind-icon">from<wbr>Now</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdate.html#getlocale" class="tsd-kind-icon">get<wbr>Locale</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdate.html#getnative" class="tsd-kind-icon">get<wbr>Native</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdate.html#gettimezone" class="tsd-kind-icon">get<wbr>Timezone</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdate.html#humanized" class="tsd-kind-icon">humanized</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdate.html#isafter" class="tsd-kind-icon">is<wbr>After</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdate.html#isbefore" class="tsd-kind-icon">is<wbr>Before</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdate.html#isbetween" class="tsd-kind-icon">is<wbr>Between</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdate.html#isleapyear" class="tsd-kind-icon">is<wbr>Leap<wbr>Year</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdate.html#isvalid" class="tsd-kind-icon">is<wbr>Valid</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdate.html#sameas" class="tsd-kind-icon">same<wbr>As</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdate.html#setlocale" class="tsd-kind-icon">set<wbr>Locale</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdate.html#settimezone" class="tsd-kind-icon">set<wbr>Timezone</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdate.html#toisostring" class="tsd-kind-icon">toISOString</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdate.html#tolocalestring" class="tsd-kind-icon">to<wbr>Locale<wbr>String</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cdate.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="cdate.html#stringtodate" class="tsd-kind-icon">string<wbr>ToDate</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new CDate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="cdate.html" class="tsd-signature-type" data-tsd-kind="Class">CDate</a></li>
+						<li class="tsd-signature tsd-kind-icon">new CDate<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="cdate.html" class="tsd-signature-type" data-tsd-kind="Class">CDate</a></li>
+						<li class="tsd-signature tsd-kind-icon">new CDate<span class="tsd-signature-symbol">(</span>dateString<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="cdate.html" class="tsd-signature-type" data-tsd-kind="Class">CDate</a></li>
+						<li class="tsd-signature tsd-kind-icon">new CDate<span class="tsd-signature-symbol">(</span>year<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, monthIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, day<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, hours<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, minutes<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, seconds<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, milliseconds<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="cdate.html" class="tsd-signature-type" data-tsd-kind="Class">CDate</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L27">dates/CDate.ts:27</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>When no argument is passed to the constructor, creates the underlying native date with <code>new Date()</code>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="cdate.html" class="tsd-signature-type" data-tsd-kind="Class">CDate</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L32">dates/CDate.ts:32</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>When a native date object is passed to the constructor, it is kept untouched.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">Date</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="cdate.html" class="tsd-signature-type" data-tsd-kind="Class">CDate</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L38">dates/CDate.ts:38</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>When a string is passed to the constructor, the expected behaviour is the following:</p>
+									<ul>
+										<li>if the input string a full ISO-8061 string, it is converted as is by the native <code>Date</code> constructor after cheking if date and time are valid</li>
+										<li>if the input string is a short ISO-8061 string (i.e. in the format <code>YYYY-MM-DD</code>), it is passed as <code>YYYY-MM-DDT00:00</code> to the native contructor (after validation) so as to ensure that it will be interpreted as in the local timezone, not in UTC</li>
+										<li>otherwise, the input string must meet any of the formats defined in the <code>DATE_INPUT_FORMATS</code> enumeration</li>
+									</ul>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dateString: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="cdate.html" class="tsd-signature-type" data-tsd-kind="Class">CDate</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L47">dates/CDate.ts:47</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>When numbers are passed to the constructor, they are validated before being passed to the native <code>Date</code> constructor.
+									So, differently from the native object&#39;s beheviour, parameters like <code>new CDate(2020, 1, 30)</code> or <code>new CDate(2020, 12, 31)</code> are not accepted as valid.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>year: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>monthIndex: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> day: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> hours: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> minutes: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> seconds: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> milliseconds: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="cdate.html" class="tsd-signature-type" data-tsd-kind="Class">CDate</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="date" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> date</h3>
+					<div class="tsd-signature tsd-kind-icon">date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L24">dates/CDate.ts:24</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="locale" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> locale</h3>
+					<div class="tsd-signature tsd-kind-icon">locale<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L26">dates/CDate.ts:26</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="timezone" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> timezone</h3>
+					<div class="tsd-signature tsd-kind-icon">timezone<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L27">dates/CDate.ts:27</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="valid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> valid</h3>
+					<div class="tsd-signature tsd-kind-icon">valid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L25">dates/CDate.ts:25</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="fromnow" class="tsd-anchor"></a>
+					<h3>from<wbr>Now</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">from<wbr>Now<span class="tsd-signature-symbol">(</span>durationType<span class="tsd-signature-symbol">?: </span><a href="../enums/duration_types.html" class="tsd-signature-type" data-tsd-kind="Enumeration">DURATION_TYPES</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L248">dates/CDate.ts:248</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Like Moment&#39;s <code>fromNow()</code>. Uses Javascript&#39;s native <code>Intl</code> API.</p>
+								</div>
+								<p>Usage:</p>
+								<pre><code><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">CDate</span><span style="color: #000000">().</span><span style="color: #795E26">setLocale</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;pt-BR&#039;</span><span style="color: #000000">).</span><span style="color: #795E26">fromNow</span><span style="color: #000000">(</span><span style="color: #0070C1">DURATION_TYPES</span><span style="color: #000000">.</span><span style="color: #0070C1">SECONDS</span><span style="color: #000000">));</span>
+<span style="color: #008000">// Output: agora</span>
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>durationType: <a href="../enums/duration_types.html" class="tsd-signature-type" data-tsd-kind="Enumeration">DURATION_TYPES</a><span class="tsd-signature-symbol"> = ...</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>If omitted, <code>DURATION_TYPES.SECONDS</code> will be used.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getlocale" class="tsd-anchor"></a>
+					<h3>get<wbr>Locale</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Locale<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L162">dates/CDate.ts:162</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets locale. If no locale was previously set, the user&#39;s locale will be returned.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getnative" class="tsd-anchor"></a>
+					<h3>get<wbr>Native</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Native<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L176">dates/CDate.ts:176</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the underlying native <code>Date</code> object.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="gettimezone" class="tsd-anchor"></a>
+					<h3>get<wbr>Timezone</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Timezone<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L169">dates/CDate.ts:169</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets timezone. If no timezone was previously set, the user&#39;s timezone will be returned.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="humanized" class="tsd-anchor"></a>
+					<h3>humanized</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">humanized<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L304">dates/CDate.ts:304</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a locale string representation of the underlying date in a more human-readable format.</p>
+								</div>
+								<p>Usage:</p>
+								<pre><code><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">CDate</span><span style="color: #000000">(</span><span style="color: #098658">2020</span><span style="color: #000000">, </span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #098658">1</span><span style="color: #000000">).</span><span style="color: #795E26">setLocale</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;pt-BR&#039;</span><span style="color: #000000">).</span><span style="color: #795E26">setTimeZone</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;America/Sao_Paulo&#039;</span><span style="color: #000000">).</span><span style="color: #795E26">humanized</span><span style="color: #000000">());</span>
+<span style="color: #008000">// Output: 1 de janeiro de 2020</span>
+</code></pre>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isafter" class="tsd-anchor"></a>
+					<h3>is<wbr>After</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>After<span class="tsd-signature-symbol">(</span>date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L200">dates/CDate.ts:200</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Informs whether the underlying date is after the other date given as a parameter.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>date: <span class="tsd-signature-type">Date</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isbefore" class="tsd-anchor"></a>
+					<h3>is<wbr>Before</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Before<span class="tsd-signature-symbol">(</span>date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L210">dates/CDate.ts:210</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Informs whether the underlying date is before the other date given as a parameter.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>date: <span class="tsd-signature-type">Date</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isbetween" class="tsd-anchor"></a>
+					<h3>is<wbr>Between</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Between<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span>, second<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L221">dates/CDate.ts:221</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Informs whether the underlying date is between the other two dates given as parameters.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>first: <span class="tsd-signature-type">Date</span></h5>
+								</li>
+								<li>
+									<h5>second: <span class="tsd-signature-type">Date</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isleapyear" class="tsd-anchor"></a>
+					<h3>is<wbr>Leap<wbr>Year</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Leap<wbr>Year<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L190">dates/CDate.ts:190</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Informs whether the underlying date is contained within a leap year.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isvalid" class="tsd-anchor"></a>
+					<h3>is<wbr>Valid</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Valid<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L183">dates/CDate.ts:183</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Informs whether the class represents a valid <code>Date</code> object.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="sameas" class="tsd-anchor"></a>
+					<h3>same<wbr>As</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">same<wbr>As<span class="tsd-signature-symbol">(</span>date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L232">dates/CDate.ts:232</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Informs whether the underlying date is the same as the other date given as a parameter.
+									Only year, month and date are taken into account in the comparison. Time information is discarded.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>date: <span class="tsd-signature-type">Date</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setlocale" class="tsd-anchor"></a>
+					<h3>set<wbr>Locale</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Locale<span class="tsd-signature-symbol">(</span>locale<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="cdate.html" class="tsd-signature-type" data-tsd-kind="Class">CDate</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L144">dates/CDate.ts:144</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets locale to be used for converting date to string.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>locale: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A Unicode BCP 47 locale identifier, like &quot;pt-BR&quot; or &quot;en-US&quot;.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="cdate.html" class="tsd-signature-type" data-tsd-kind="Class">CDate</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="settimezone" class="tsd-anchor"></a>
+					<h3>set<wbr>Timezone</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Timezone<span class="tsd-signature-symbol">(</span>timezone<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="cdate.html" class="tsd-signature-type" data-tsd-kind="Class">CDate</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L154">dates/CDate.ts:154</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets timezone to be used for converting date to string.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>timezone: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Valid IANA timezone string.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="cdate.html" class="tsd-signature-type" data-tsd-kind="Class">CDate</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="toisostring" class="tsd-anchor"></a>
+					<h3>toISOString</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">toISOString<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L276">dates/CDate.ts:276</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns ISO-8061 representation of the underlying date.</p>
+								</div>
+								<p>Example:</p>
+								<pre><code><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">CDate</span><span style="color: #000000">(</span><span style="color: #098658">2020</span><span style="color: #000000">, </span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #098658">1</span><span style="color: #000000">).</span><span style="color: #795E26">setTimezone</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;UTC&#039;</span><span style="color: #000000">).</span><span style="color: #795E26">toSISOtring</span><span style="color: #000000">());</span>
+<span style="color: #008000">// Output: 2020-01-01T00:00:00.000Z</span>
+</code></pre>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="tolocalestring" class="tsd-anchor"></a>
+					<h3>to<wbr>Locale<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Locale<wbr>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L290">dates/CDate.ts:290</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a locale string representation of the underlying date.</p>
+								</div>
+								<p>Usage:</p>
+								<pre><code><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">CDate</span><span style="color: #000000">(</span><span style="color: #098658">2020</span><span style="color: #000000">, </span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #098658">1</span><span style="color: #000000">).</span><span style="color: #795E26">setLocale</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;pt-BR&#039;</span><span style="color: #000000">).</span><span style="color: #795E26">setTimeZone</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;America/Sao_Paulo&#039;</span><span style="color: #000000">).</span><span style="color: #795E26">toLocaleString</span><span style="color: #000000">());</span>
+<span style="color: #008000">// Output: 01/01/2020</span>
+</code></pre>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="tostring" class="tsd-anchor"></a>
+					<h3>to<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L262">dates/CDate.ts:262</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns short ISO-8061 representation of the underlying date.</p>
+								</div>
+								<p>Example:</p>
+								<pre><code><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">CDate</span><span style="color: #000000">(</span><span style="color: #098658">2020</span><span style="color: #000000">, </span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #098658">1</span><span style="color: #000000">).</span><span style="color: #795E26">toString</span><span style="color: #000000">());</span>
+<span style="color: #008000">// Output: 2020-01-01</span>
+</code></pre>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="stringtodate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> string<wbr>ToDate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">string<wbr>ToDate<span class="tsd-signature-symbol">(</span>dateString<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, inputFormat<span class="tsd-signature-symbol">?: </span><a href="../enums/date_input_formats.html#dd_mm_yyyy" class="tsd-signature-type" data-tsd-kind="Enumeration member">DD_MM_YYYY</a><span class="tsd-signature-symbol"> | </span><a href="../enums/date_input_formats.html#mm_dd_yyyy" class="tsd-signature-type" data-tsd-kind="Enumeration member">MM_DD_YYYY</a><span class="tsd-signature-symbol"> | </span><a href="../enums/date_input_formats.html#mm_yyyy" class="tsd-signature-type" data-tsd-kind="Enumeration member">MM_YYYY</a><span class="tsd-signature-symbol"> | </span><a href="../enums/date_input_formats.html#mm_yy" class="tsd-signature-type" data-tsd-kind="Enumeration member">MM_YY</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ijusplab/helpers/blob/master/src/dates/CDate.ts#L135">dates/CDate.ts:135</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts a valid date into a string in one of the pre-defined formats.
+									The expected behaviour is the following:</p>
+									<ul>
+										<li>if the input string a full ISO-8061 string, it is converted as is by the native <code>Date</code> constructor after cheking if date and time are valid</li>
+										<li>if the input string is a short ISO-8061 string (i.e. in the format <code>YYYY-MM-DD</code>), it is passed as <code>YYYY-MM-DDT00:00</code> to the native contructor (after validation) so as to ensure that it will be interpreted as in the local timezone, not in UTC</li>
+										<li>otherwise, the input string must meet any of the formats defined in the <code>DATE_INPUT_FORMATS</code> enumeration</li>
+									</ul>
+								</div>
+								<p>Usage:</p>
+								<pre><code><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #795E26">stringToDate</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;06/01/2021&#039;</span><span style="color: #000000">, </span><span style="color: #0070C1">DATE_INPUT_FORMATS</span><span style="color: #000000">.</span><span style="color: #0070C1">DD_MM_YYYY</span><span style="color: #000000">));</span>
+<span style="color: #008000">// Output: Wed Jan 06 2021 00:00:00 GMT-0000 (UTC)</span>
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dateString: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> inputFormat: <a href="../enums/date_input_formats.html#dd_mm_yyyy" class="tsd-signature-type" data-tsd-kind="Enumeration member">DD_MM_YYYY</a><span class="tsd-signature-symbol"> | </span><a href="../enums/date_input_formats.html#mm_dd_yyyy" class="tsd-signature-type" data-tsd-kind="Enumeration member">MM_DD_YYYY</a><span class="tsd-signature-symbol"> | </span><a href="../enums/date_input_formats.html#mm_yyyy" class="tsd-signature-type" data-tsd-kind="Enumeration member">MM_YYYY</a><span class="tsd-signature-symbol"> | </span><a href="../enums/date_input_formats.html#mm_yy" class="tsd-signature-type" data-tsd-kind="Enumeration member">MM_YY</a></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="cdate.html" class="tsd-kind-icon">CDate</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="cdate.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="cdate.html#date" class="tsd-kind-icon">date</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="cdate.html#locale" class="tsd-kind-icon">locale</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="cdate.html#timezone" class="tsd-kind-icon">timezone</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="cdate.html#valid" class="tsd-kind-icon">valid</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="cdate.html#fromnow" class="tsd-kind-icon">from<wbr>Now</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="cdate.html#getlocale" class="tsd-kind-icon">get<wbr>Locale</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="cdate.html#getnative" class="tsd-kind-icon">get<wbr>Native</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="cdate.html#gettimezone" class="tsd-kind-icon">get<wbr>Timezone</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="cdate.html#humanized" class="tsd-kind-icon">humanized</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="cdate.html#isafter" class="tsd-kind-icon">is<wbr>After</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="cdate.html#isbefore" class="tsd-kind-icon">is<wbr>Before</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="cdate.html#isbetween" class="tsd-kind-icon">is<wbr>Between</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="cdate.html#isleapyear" class="tsd-kind-icon">is<wbr>Leap<wbr>Year</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="cdate.html#isvalid" class="tsd-kind-icon">is<wbr>Valid</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="cdate.html#sameas" class="tsd-kind-icon">same<wbr>As</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="cdate.html#setlocale" class="tsd-kind-icon">set<wbr>Locale</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="cdate.html#settimezone" class="tsd-kind-icon">set<wbr>Timezone</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="cdate.html#toisostring" class="tsd-kind-icon">toISOString</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="cdate.html#tolocalestring" class="tsd-kind-icon">to<wbr>Locale<wbr>String</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="cdate.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="cdate.html#stringtodate" class="tsd-kind-icon">string<wbr>ToDate</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

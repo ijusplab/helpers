@@ -1,0 +1,29 @@
+# source code
+node_modules
+src
+yarn.lock
+
+# docs
+docs
+typedoc.json
+
+# testing
+coverage
+test
+jest.config.js
+
+# linting
+.eslintignore
+.eslintrs.js
+.prettierignore
+.prettierrc.js
+
+# build tools
+rollup.config.js
+tsconfig*.json
+
+# git and IDE
+.vscode
+*.code-workspace
+.git
+.gitignore
