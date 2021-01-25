@@ -1,6 +1,0 @@
-export enum DATE_INPUT_FORMATS {
-  DD_MM_YYYY = 'DD_MM_YYYY',
-  MM_DD_YYYY = 'MM_DD_YYYY',
-  MM_YYYY = 'MM_YYYY',
-  MM_YY = 'MM_YY'
-}

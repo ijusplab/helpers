@@ -1,6 +1,5 @@
 import parseFloatLocale from './parseFloatLocale';
 import { getUserLocale } from '../locale';
-import { isNumeric } from '../validation';
 
 /**
  * Formats a number into a localized format using the native `Intl` object.
@@ -19,8 +18,6 @@ export default function toLocalePercentFormat(
   precision = 0,
   locale: string = getUserLocale()
 ): string {
-  if (!isNumeric(value)) throw new Error('The function accepts only numeric values!');
-  return new Intl.NumberFormat(locale, { style: 'percent', maximumFractionDigits: precision }).format(
-    parseFloatLocale(value)
-  );
+  const options = { style: 'percent', maximumFractionDigits: precision };
+  return new Intl.NumberFormat(locale, options).format(parseFloatLocale(value));
 }

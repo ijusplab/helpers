@@ -1,4 +1,4 @@
-export type { table } from './aliases';
+export type { value, cell, table } from './aliases';
 export { default as isBoolean } from './isBoolean';
 export { default as isDate } from './isDate';
 export { default as isFunction } from './isFunction';
@@ -7,4 +7,5 @@ export { default as isObject } from './isObject';
 export { default as isRegExp } from './isRegExp';
 export { default as isString } from './isString';
 export { default as isTable } from './isTable';
+export { default as isValue } from './isValue';
 export { default as toType } from './toType';

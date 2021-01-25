@@ -19,7 +19,7 @@ import { isString, isObject, isDate, isNumber } from '../predicates';
  * @param arr Array to be searched
  * @param search Search argument
  */
-export default function filterAsString(arr: Array<unknown>, search: string): Array<unknown> {
+export default function filterAsString(arr: unknown[], search: string): unknown[] {
   if (!Array.isArray(arr)) {
     throw new Error('First argument must be an array!');
   }

@@ -9,7 +9,9 @@ import dateToString from './dateToString';
 import { getUserLocale, getUserTimeZone } from '../locale';
 import { isString } from '../predicates';
 import { isValidDate, validDateParameters, validTimeParameters } from '../validation';
-import { DATE_INPUT_FORMATS, DATE_OUTPUT_FORMATS, DURATION_TYPES } from '../enums';
+import { DATE_OUTPUT_FORMATS, DURATION_TYPES } from '../enums';
+import firstDayOfMonth from './firstDayOfMonth';
+import addToDate from './addToDate';
 
 /**
  * Convenience wrapper for the native Date object.
@@ -132,8 +134,8 @@ export default class CDate {
    * @param dateString
    * @param inputFormat
    */
-  static stringToDate(dateString: string, inputFormat?: DATE_INPUT_FORMATS): Date {
-    return stringToDate(dateString, inputFormat);
+  static stringToDate(dateString: string, locale?: string): Date {
+    return stringToDate(dateString, locale);
   }
 
   /**
@@ -142,7 +144,9 @@ export default class CDate {
    * @param locale A Unicode BCP 47 locale identifier, like "pt-BR" or "en-US".
    */
   setLocale(locale: string): CDate {
-    this.locale = locale;
+    if (isString(locale)) {
+      this.locale = locale;
+    }
     return this;
   }
 
@@ -152,7 +156,9 @@ export default class CDate {
    * @param timezone Valid IANA timezone string.
    */
   setTimezone(timezone: string): CDate {
-    this.timezone = timezone;
+    if (isString(timezone)) {
+      this.timezone = timezone;
+    }
     return this;
   }
 
@@ -172,9 +178,37 @@ export default class CDate {
 
   /**
    * Returns the value of `date` private attribute (the underlying native `Date` object).
+   * Throws an exception if the date is invalid.
    */
-  getNative(): Date | undefined {
+  getNative(): Date {
+    if (!this.valid || this.date === undefined) throw new Error('Invalid date!');
     return this.date;
+  }
+
+  /**
+   * Returns the native object's number value.
+   */
+  valueOf(): number {
+    if (!this.valid || this.date === undefined) throw new Error('Invalid date!');
+    return this.date.valueOf();
+  }
+
+  /**
+   * Returns the competence of the underlying date.
+   * Competence represents the month to which the date refers. By convention, competence corresponds to the first day of that month.
+   * Throws an exception if the date is invalid.
+   */
+  getCompetence(): Date {
+    return firstDayOfMonth(this.getNative());
+  }
+
+  /**
+   * Returns the competence of the underlying date in locale string format.
+   * Competence represents the month to which the date refers. By convention, competence corresponds to the first day of that month.
+   * Throws an exception if the date is invalid.
+   */
+  getCompetenceAsString(): string {
+    return dateToString(this.getCompetence(), DATE_OUTPUT_FORMATS.SHORT_LOCALE, this.locale, this.timezone);
   }
 
   /**
@@ -186,6 +220,7 @@ export default class CDate {
 
   /**
    * Informs whether the underlying date is contained within a leap year.
+   * Throws an exception if the date is invalid.
    */
   isLeapYear(): boolean {
     if (!this.valid || this.date === undefined) throw new Error('Invalid date!');
@@ -194,6 +229,7 @@ export default class CDate {
 
   /**
    * Informs whether the underlying date is after the other date given as a parameter.
+   * Throws an exception if the date is invalid.
    *
    * @param date
    */
@@ -204,6 +240,7 @@ export default class CDate {
 
   /**
    * Informs whether the underlying date is before the other date given as a parameter.
+   * Throws an exception if the date is invalid.
    *
    * @param date
    */
@@ -214,6 +251,7 @@ export default class CDate {
 
   /**
    * Informs whether the underlying date is between the other two dates given as parameters.
+   * Throws an exception if the date is invalid.
    *
    * @param first
    * @param second
@@ -226,6 +264,7 @@ export default class CDate {
   /**
    * Informs whether the underlying date is the same as the other date given as a parameter.
    * Only year, month and date are taken into account in the comparison. Time information is discarded.
+   * Throws an exception if the date is invalid.
    *
    * @param date
    */
@@ -235,7 +274,20 @@ export default class CDate {
   }
 
   /**
+   * Adds (or subtracts) a certain number of years, months, weeks, days, hours, minutes or seconds.
+   * Returns a new CDate object.
+   *
+   * @param unities Unities to add (or subtract, in case of a negative number)
+   * @param durationType
+   */
+  add(unities: number, durationType: DURATION_TYPES = DURATION_TYPES.DAYS): CDate {
+    if (!this.valid || this.date === undefined) throw new Error('Invalid date!');
+    return new CDate(addToDate(this.date, unities, durationType));
+  }
+
+  /**
    * Like Moment's `fromNow()`. Uses Javascript's native `Intl` API.
+   * Throws an exception if the date is invalid.
    *
    * Usage:
    * ```
@@ -252,6 +304,7 @@ export default class CDate {
 
   /**
    * Returns short ISO-8061 representation of the underlying date.
+   * Throws an exception if the date is invalid.
    *
    * Example:
    * ```
@@ -266,6 +319,7 @@ export default class CDate {
 
   /**
    * Returns ISO-8061 representation of the underlying date.
+   * Throws an exception if the date is invalid.
    *
    * Example:
    * ```
@@ -280,6 +334,7 @@ export default class CDate {
 
   /**
    * Returns a locale string representation of the underlying date.
+   * Throws an exception if the date is invalid.
    *
    * Usage:
    * ```
@@ -294,6 +349,7 @@ export default class CDate {
 
   /**
    * Returns a locale string representation of the underlying date in a more human-readable format.
+   * Throws an exception if the date is invalid.
    *
    * Usage:
    * ```

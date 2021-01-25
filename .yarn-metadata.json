@@ -1,0 +1,73 @@
+{
+  "manifest": {
+    "name": "@ijusplab/helpers",
+    "version": "1.1.2",
+    "description": "General utility functions for Javascript projects",
+    "main": "dist/index.cjs.js",
+    "main:prod": "dist/index.cjs.min.js",
+    "umd": "dist/index.umd.js",
+    "browser": "dist/index.umd.min.js",
+    "unpkg": "dist/index.umd.min.js",
+    "module": "dist/index.esm.js",
+    "module:prod": "dist/index.esm.min.js",
+    "types": "types/index.d.ts",
+    "scripts": {
+      "doc": "typedoc --plugin typedoc-plugin-extras --favicon public/favicon.png src/index.ts",
+      "build": "rollup -c",
+      "lint": "eslint \"src/**/*.ts\"",
+      "lint:fix": "eslint \"src/**/*.ts\" --fix",
+      "format": "prettier --write \"src/**/*.ts\"",
+      "test": "jest",
+      "test:watch": "jest --watch",
+      "test:cov": "jest --coverage",
+      "prepublishOnly": "npm run test && npm run build"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/ijusplab/helpers.git"
+    },
+    "author": {
+      "name": "Caio Moysés de Lima"
+    },
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/ijusplab/helpers/issues",
+      "email": "caio.moyses.lima@gmail.com"
+    },
+    "homepage": "https://github.com/ijusplab/helpers#readme",
+    "devDependencies": {
+      "@types/jest": "^26.0.19",
+      "@types/prettier": "^2.1.6",
+      "@typescript-eslint/eslint-plugin": "^4.11.1",
+      "@typescript-eslint/parser": "^4.11.1",
+      "eslint": "^7.17.0",
+      "eslint-config-prettier": "^7.1.0",
+      "eslint-plugin-prettier": "^3.3.1",
+      "jest": "^26.6.3",
+      "prettier": "^2.2.1",
+      "rollup": "^2.35.1",
+      "rollup-plugin-delete": "^2.0.0",
+      "rollup-plugin-terser": "^7.0.2",
+      "rollup-plugin-typescript2": "^0.29.0",
+      "ts-jest": "^26.4.4",
+      "typedoc": "^0.20.14",
+      "typedoc-plugin-extras": "^1.1.7",
+      "typescript": "^4.1.3"
+    },
+    "dependencies": {},
+    "_registry": "npm",
+    "_loc": "C:\\Users\\cmlima\\AppData\\Local\\Yarn\\Cache\\v6\\npm-@ijusplab-helpers-1.1.2-533e01fd-c087-4e61-b637-d8c947a71a92-1610727572923\\node_modules\\@ijusplab\\helpers\\package.json",
+    "readmeFilename": "README.md",
+    "readme": "# Helpers\n\nGeneral-purpose Javascript functions used by the Innovation Lab of the Federal Justice of São Paulo (iJuspLab).\n\nThe library was developed in Typescript and can be used both in Node and in the browser. Distribution files are located inside the folder `./dist` and type declaration files inside the folder `./types`.\n\n## Installation:\n```\nnpm install @ijuplab/helpers\n```\nor\n```\nyarn add @ijuplab/helpers\n```\n\n## Usage:\n```javascript\nconst { CDate } = require('@ijusplab/helpers');\n\nconsole.log(new CDate().toString());\n```\nor \n```javascript\nìmport { CDate } from '@ijusplab/helpers';\n\nconsole.log(new CDate().toString());\n```\n\n## Usage in the browser through a CDN:\n\nAs a global object:\n```html\n<!-- Instalando no escopo global: -->\n<script src=\"https://unpkg.com/@ijusplab/helpers/dist/index.umd.min.js\"></script>\n\n<script>\n  // Os métodos da biblioteca estarão disponíveis por meio do objeto global Helpers.\n  console.log(Helpers);\n  console.log(new Helpers.CDate().toString());\n</script>\n```\nAs a ES2016 module:\n```html\n<!-- Instalando como um módulo: -->\n<script type=\"module\">\n  import { CDate } from 'https://unpkg.com/@ijusplab/helpers/dist/index.esm.min.js';\n\n  console.log(new CDate().toString());\n</script>\n```\n\n## Licensing\n\n### Code\n\nAll software files are distributed under the [MIT license](LICENSE). Copyright held by iJuspLab.\n\n### Assets\n\nAny institutional symbols, such as coats of arms, emblems, badges, logos etc, belonging to or representing the Federal Justice of São Paulo (Justiça Federal de São Paulo - JFSP), iJuspLab, Equipe de Gestão de Dados - EGD, Incubadora de Soluções Tecnológicas, Núcleo de Inovação Tecnológica - NUIT or any of their agencies, departments, sectors, branches, affiliates, partners or controlling organizations, either stored in this repository or referenced herein through hyperlinks, are not licensed and may not be used without the prior written consent of the legal representatives of the Federal Justice of São Paulo.\n\n<div style=\"display: flex; align-items: center; justify-content: space-around;\">\n  <img src=\"https://unpkg.com/@ijusplab/static-assets@latest/assets/ijusplab.png\" height=\"80\" />\n  <img src=\"https://unpkg.com/@ijusplab/static-assets@latest/assets/incubadora.png\" height=\"50\" />\n</div>\n\n\n",
+    "licenseText": "MIT License\n\nCopyright (c) 2021 iJuspLab\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "type": "copy",
+    "registry": "npm",
+    "hash": "098f3b36-6b0b-43a3-9e76-3c84a6be7db2-1611410870210",
+    "reference": "C:\\Users\\cmlima\\Desenvolvimento\\INCUBADORA\\text-parser\\node_modules\\@ijusplab\\helpers"
+  },
+  "registry": "npm",
+  "hash": "098f3b36-6b0b-43a3-9e76-3c84a6be7db2-1611410870210"
+}

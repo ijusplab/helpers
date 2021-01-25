@@ -1,5 +1,5 @@
 import CDate from './CDate';
-import { DURATION_TYPES, DATE_INPUT_FORMATS } from '../enums';
+import { DURATION_TYPES } from '../enums';
 
 describe('Testing CDate...', () => {
   it('Shoud corretly instantiate valid dates when receiving valid parameteres', () => {
@@ -18,25 +18,20 @@ describe('Testing CDate...', () => {
   it('Should correctly convert strings to date', () => {
     expect(CDate.stringToDate('2021-01-06T05:57:20.154Z')).toEqual(new Date('2021-01-06T05:57:20.154Z'));
     expect(CDate.stringToDate('2021-01-06')).toEqual(new Date('2021-01-06T00:00'));
-    expect(CDate.stringToDate('06-01-2021', DATE_INPUT_FORMATS.DD_MM_YYYY)).toEqual(new Date('2021-01-06T00:00'));
-    expect(CDate.stringToDate('06.01.2021', DATE_INPUT_FORMATS.DD_MM_YYYY)).toEqual(new Date('2021-01-06T00:00'));
-    expect(CDate.stringToDate('06/01/2021', DATE_INPUT_FORMATS.DD_MM_YYYY)).toEqual(new Date('2021-01-06T00:00'));
-    expect(CDate.stringToDate('01-2021', DATE_INPUT_FORMATS.MM_YYYY)).toEqual(new Date('2021-01-01T00:00'));
-    expect(CDate.stringToDate('01.2021', DATE_INPUT_FORMATS.MM_YYYY)).toEqual(new Date('2021-01-01T00:00'));
-    expect(CDate.stringToDate('01/2021', DATE_INPUT_FORMATS.MM_YYYY)).toEqual(new Date('2021-01-01T00:00'));
-    expect(CDate.stringToDate('01/21', DATE_INPUT_FORMATS.MM_YY)).toEqual(new Date('1921-01-01T00:00'));
-    expect(CDate.stringToDate('01-06-2021', DATE_INPUT_FORMATS.MM_DD_YYYY)).toEqual(new Date('2021-01-06T00:00'));
+    expect(CDate.stringToDate('06-01-2021', 'pt-BR')).toEqual(new Date('2021-01-06T00:00'));
+    expect(CDate.stringToDate('06.01.2021', 'pt-BR')).toEqual(new Date('2021-01-06T00:00'));
+    expect(CDate.stringToDate('06/01/2021', 'pt-BR')).toEqual(new Date('2021-01-06T00:00'));
+    expect(CDate.stringToDate('01-2021', 'pt-BR')).toEqual(new Date('2021-01-01T00:00'));
+    expect(CDate.stringToDate('01.2021', 'pt-BR')).toEqual(new Date('2021-01-01T00:00'));
+    expect(CDate.stringToDate('01/2021', 'pt-BR')).toEqual(new Date('2021-01-01T00:00'));
+    expect(CDate.stringToDate('01/21', 'pt-BR')).toEqual(new Date('1921-01-01T00:00'));
+    expect(CDate.stringToDate('01-06-2021', 'en-US')).toEqual(new Date('2021-01-06T00:00'));
   });
   it('Should throw errors when parameters for convertion are invalid', () => {
     // @ts-expect-error Testing for errors now
     expect(() => CDate.stringToDate(new Date())).toThrow('The function accepts strings only!');
-    expect(() => CDate.stringToDate('01/01/2020')).toThrow('Invalid date string!');
-    // @ts-expect-error Testing for errors now
-    expect(() => CDate.stringToDate('01/01/2020', 'YYYY.MM.MM')).toThrow('Invalid date format!');
-    expect(() => CDate.stringToDate('01/2020', DATE_INPUT_FORMATS.DD_MM_YYYY)).toThrow(
-      'Date string must match input format!'
-    );
-    expect(() => CDate.stringToDate('31/02/2020', DATE_INPUT_FORMATS.DD_MM_YYYY)).toThrow('Invalid date: 2020-02-31!');
+    expect(() => CDate.stringToDate('001/01/2020', 'pt-BR')).toThrow('Invalid date string!');
+    expect(() => CDate.stringToDate('31/02/2020', 'pt-BR')).toThrow('Invalid date: 2020-02-31!');
   });
   it('Should inform correctly any given leap year', () => {
     expect(new CDate(1804, 1, 1).isLeapYear()).toBe(true);
@@ -91,6 +86,24 @@ describe('Testing CDate...', () => {
     expect(new CDate('1806-01-01').sameAs(new Date('1806-01-01T00:00'))).toBe(true);
     expect(new CDate('1806-01-01').sameAs(new Date('1806-02-01T00:00'))).toBe(false);
   });
+  it('Should corretly return addition and subtractions', () => {
+    expect(new CDate('2020-01-01').add(5, DURATION_TYPES.YEARS).getNative()).toEqual(new Date('2025-01-01T00:00'));
+    expect(new CDate('2020-01-01').add(-5, DURATION_TYPES.YEARS).getNative()).toEqual(new Date('2015-01-01T00:00'));
+    expect(new CDate('2020-01-01').add(5, DURATION_TYPES.MONTHS).getNative()).toEqual(new Date('2020-06-01T00:00'));
+    expect(new CDate('2020-01-01').add(-5, DURATION_TYPES.MONTHS).getNative()).toEqual(new Date('2019-08-01T00:00'));
+    expect(new CDate('2020-01-01').add(5, DURATION_TYPES.DAYS).getNative()).toEqual(new Date('2020-01-06T00:00'));
+    expect(new CDate('2020-01-01').add(-5, DURATION_TYPES.DAYS).getNative()).toEqual(new Date('2019-12-27T00:00'));
+    expect(new CDate('2020-01-01').add(1, DURATION_TYPES.WEEKS).getNative()).toEqual(new Date('2020-01-08T00:00'));
+    expect(new CDate('2020-01-01').add(-1, DURATION_TYPES.WEEKS).getNative()).toEqual(new Date('2019-12-25T00:00'));
+    expect(new CDate('2020-01-01').add(5, DURATION_TYPES.HOURS).getNative()).toEqual(new Date('2020-01-01T05:00'));
+    expect(new CDate('2020-01-01').add(-5, DURATION_TYPES.HOURS).getNative()).toEqual(new Date('2019-12-31T19:00'));
+    expect(new CDate('2020-01-01').add(61, DURATION_TYPES.MINUTES).getNative()).toEqual(new Date('2020-01-01T01:01'));
+    expect(new CDate('2020-01-01').add(-61, DURATION_TYPES.MINUTES).getNative()).toEqual(new Date('2019-12-31T22:59'));
+    expect(new CDate('2020-01-01').add(61, DURATION_TYPES.SECONDS).getNative()).toEqual(new Date(2020, 0, 1, 0, 1, 1));
+    expect(new CDate('2020-01-01').add(-61, DURATION_TYPES.SECONDS).getNative()).toEqual(
+      new Date(2019, 11, 31, 23, 58, 59)
+    );
+  });
   it('Should nicely inform durations from now', () => {
     const seconds = new Date();
     seconds.setSeconds(seconds.getSeconds() + 60);
@@ -124,6 +137,7 @@ describe('Testing CDate...', () => {
     expect(() => new CDate(new Date('invalid')).isBefore(new Date())).toThrow('Invalid date!');
     expect(() => new CDate(new Date('invalid')).isBetween(new Date(), new Date())).toThrow('Invalid date!');
     expect(() => new CDate(new Date('invalid')).sameAs(new Date())).toThrow('Invalid date!');
+    expect(() => new CDate(new Date('invalid')).add(2)).toThrow('Invalid date!');
     expect(() => new CDate(new Date('invalid')).fromNow()).toThrow('Invalid date!');
     expect(() => new CDate(new Date('invalid')).toString()).toThrow('Invalid date!');
     expect(() => new CDate(new Date('invalid')).toISOString()).toThrow('Invalid date!');

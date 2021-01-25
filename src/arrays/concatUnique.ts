@@ -1,7 +1,8 @@
 import filterUnique from './filterUnique';
+import flatten from './flatten';
 
 /**
- * Concatenates any number of arrays of strings and/or number, as well as strings and numbers.
+ * Concatenates any number of booleans, strings, numbers or Dates or arrays of those types.
  * Keeps only unique items.
  *
  * **Usage:**
@@ -10,8 +11,9 @@ import filterUnique from './filterUnique';
  * console.log(newArray);
  * // Output: [1, 'a', 'b', 3, 2, 'c']
  * ```
- * @param args Any number of arrays, strings or numbers to be concatenated
+ * @param args Any number of arrays or values to be concatenated
  */
-export default function concatUnique(...args: Array<string | number | Array<string | number>>): Array<string | number> {
+export default function concatUnique(...args: unknown[]): unknown[] {
+  args = args.map((arg) => (Array.isArray(arg) ? flatten(arg) : arg));
   return Array.prototype.concat(...args).filter(filterUnique);
 }

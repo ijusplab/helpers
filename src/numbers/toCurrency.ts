@@ -1,7 +1,6 @@
 import parseFloatLocale from './parseFloatLocale';
 import toLocaleNumberFormat from './toLocaleNumberFormat';
 import { getUserLocale } from '../locale';
-import { isNumeric } from '../validation';
 import type { CURRENCY_CODES } from '../enums';
 
 /**
@@ -21,11 +20,11 @@ export default function toCurrency(
   currency?: CURRENCY_CODES,
   locale: string = getUserLocale()
 ): string {
-  if (!isNumeric(value)) throw new Error('The function accepts only numeric values!');
+  const number = parseFloatLocale(value);
   if (currency) {
-    return new Intl.NumberFormat(locale, { style: 'currency', currency: currency }).format(parseFloatLocale(value));
+    const options = { style: 'currency', currency: currency };
+    return new Intl.NumberFormat(locale, options).format(number);
   } else {
-    const number = parseFloatLocale(value);
     const prefix = number < 0 ? '-$' : '$';
     return `${prefix}${toLocaleNumberFormat(Math.abs(number), 2, locale)}`;
   }

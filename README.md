@@ -57,7 +57,7 @@ All software files are distributed under the [MIT license](LICENSE). Copyright h
 
 ### Assets
 
-Any institutional symbols, such as coats of arms, emblems, badges, logos etc. belonging to or representing the Federal Justice of São Paulo (Justiça Federal de São Paulo - JFSP), iJuspLab, Equipe de Gestão de Dados - EGD, Incubadora de Soluções Tecnológicas, Núcleo de Inovação Tecnológica - NUIT or any of their agencies, departments, sectors, branches, affiliates, partners or controlling organizations, either stored in this repository, or referenced herein by means of hyperlinks, are not licensed and may not be used without the prior written consent of the legal representatives of the Federal Justice of São Paulo.
+Any institutional symbols, such as coats of arms, emblems, badges, logos etc, belonging to or representing the Federal Justice of São Paulo (Justiça Federal de São Paulo - JFSP), iJuspLab, Equipe de Gestão de Dados - EGD, Incubadora de Soluções Tecnológicas, Núcleo de Inovação Tecnológica - NUIT or any of their agencies, departments, sectors, branches, affiliates, partners or controlling organizations, either stored in this repository or referenced herein through hyperlinks, are not licensed and may not be used without the prior written consent of the legal representatives of the Federal Justice of São Paulo.
 
 <div style="display: flex; align-items: center; justify-content: space-around;">
   <img src="https://unpkg.com/@ijusplab/static-assets@latest/assets/ijusplab.png" height="80" />

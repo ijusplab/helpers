@@ -1,6 +1,5 @@
 import { isString } from '../predicates';
 import { validDateParameters, validTimeParameters } from '../validation';
-import { DATE_INPUT_FORMATS } from '../enums';
 
 /**
  * Converts a valid date into a string in one of the pre-defined formats.
@@ -18,32 +17,23 @@ import { DATE_INPUT_FORMATS } from '../enums';
  * @param dateString
  * @param inputFormat
  */
-export default function stringToDate(dateString: string, inputFormat?: DATE_INPUT_FORMATS): Date {
+export default function stringToDate(dateString: string, locale?: string): Date {
   if (!isString(dateString)) throw new Error('The function accepts strings only!');
-  if (inputFormat && !(inputFormat in DATE_INPUT_FORMATS)) throw new Error('Invalid date format!');
-  if (!inputFormat || PATTERNS.ISO_8601.test(dateString) || PATTERNS.SHORT_ISO.test(dateString)) {
+  if (PATTERNS.ISO_8601.test(dateString) || PATTERNS.SHORT_ISO.test(dateString)) {
     return parseIso(dateString);
   }
-  if (!isValidInputFormat(dateString, inputFormat)) throw new Error('Date string must match input format!');
-  return parseOther(dateString, inputFormat);
+  if (!isValidDateString(dateString)) throw new Error('Invalid date string!');
+  return parseOther(dateString, locale);
 }
 
 const PATTERNS = {
   ISO_8601: /^\d{4}-\d{2}-\d{2}\D\d{2}:\d{2}:\d{2}\.\d{3}Z$/, // '2016-01-01T02:00:00.000Z'
   SHORT_ISO: /^\d{4}-\d{2}-\d{2}$/, // '2016-01-01'
-  DD_MM_YYYY: /^\d{2}[-./]\d{2}[-./]\d{4}$/,
-  MM_DD_YYYY: /^\d{2}[-./]\d{2}[-./]\d{4}$/,
-  MM_YYYY: /^\d{2}[-./]\d{4}$/,
-  MM_YY: /^\d{2}[-./]\d{2}$/
+  OTHERS: /^(\d{1,2}[-./])?\d{1,2}[-./]\d{2,4}$/
 };
 
-function isValidInputFormat(dateString: string, inputFormat?: DATE_INPUT_FORMATS): boolean {
-  return (
-    (inputFormat === DATE_INPUT_FORMATS.DD_MM_YYYY && PATTERNS.DD_MM_YYYY.test(dateString)) ||
-    (inputFormat === DATE_INPUT_FORMATS.MM_DD_YYYY && PATTERNS.MM_DD_YYYY.test(dateString)) ||
-    (inputFormat === DATE_INPUT_FORMATS.MM_YYYY && PATTERNS.MM_YYYY.test(dateString)) ||
-    (inputFormat === DATE_INPUT_FORMATS.MM_YY && PATTERNS.MM_YY.test(dateString))
-  );
+function isValidDateString(dateString: string): boolean {
+  return PATTERNS.OTHERS.test(dateString);
 }
 
 function isValidIsoTime(timeString: string): boolean {
@@ -70,9 +60,14 @@ function parseIso(dateString: string): Date {
   return new Date(dateString);
 }
 
-function parseOther(dateString: string, inputFormat: DATE_INPUT_FORMATS): Date {
-  const sequence = inputFormat.split('_').map((part) => part.substr(0, 1));
+function parseOther(dateString: string, locale?: string): Date {
+  const sequence = new Intl.DateTimeFormat(locale)
+    .formatToParts(new Date())
+    .filter((part) => part.type !== 'literal')
+    .map((part) => part.type.substr(0, 1).toUpperCase());
+
   const fragments = dateString.split(/[-./]/g).map(Number);
+  if (fragments.length === 2) fragments.unshift(1);
 
   let year, month, day;
   sequence.forEach((key, index) => {
@@ -83,7 +78,9 @@ function parseOther(dateString: string, inputFormat: DATE_INPUT_FORMATS): Date {
   year = Number(('19' + year).slice(-4));
   day = day ? day : 1;
 
-  if (!year || !month || !day) throw new Error('Invalid date string!');
+  if (!year || !month || !day) {
+    throw new Error('Invalid date string!');
+  }
   if (!validDateParameters(year, month, day))
     throw new Error(`Invalid date: ${year}-${('00' + month).slice(-2)}-${('00' + day).slice(-2)}!`);
 
